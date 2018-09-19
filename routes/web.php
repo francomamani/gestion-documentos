@@ -45,6 +45,16 @@ Route::delete('tipo-documentos/destroy/{id}',
         ->name('tipo-documentos.destroy');
 
 Route::resource('documentos', 'DocumentoController');
+Route::get('documento-descargar/{id}',
+            'DocumentoController@descargar');
+Route::post('documentos/actualizar/{id}','DocumentoController@actualizar');
+Route::post('generar-reporte', 'DocumentoController@generarReporte');
+
+Route::get('docs-by-tipodocumento/{tipo?}',
+    'TipoDocumentoController@docsByTipoDocumento');
+Route::post('cambiar', 'TipoDocumentoController@cambiar');
+Route::post('generar-backup', 'BackupController@generarBackup')
+      ->name('generar-backup');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

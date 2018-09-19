@@ -11,4 +11,8 @@ class TipoDocumento extends Model
         'nombre',
         'descripcion'
     ];
+    protected $hidden = ['created_at', 'updated_at'];
+    public function documentos() {
+        return $this->hasMany(Documento::class);
+    }
 }

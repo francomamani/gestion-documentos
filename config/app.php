@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/La_Paz',
 
     /*
     |--------------------------------------------------------------------------
@@ -150,8 +150,11 @@ return [
         /*
          * Package Service Providers...
          */
-        Collective\Html\HtmlServiceProvider::class,
 
+        Collective\Html\HtmlServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+        Backup\BackupServiceProvider::class,
+        Anouar\Fpdf\FpdfServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -211,6 +214,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
+        'Fpdf' => Anouar\Fpdf\Facades\Fpdf::class,
     ],
 
 ];

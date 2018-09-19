@@ -60,12 +60,22 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('generar-backup') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('backup-form').submit();">
+                                        Generar Backup
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Cerrar Sesion
                                     </a>
 
+                                    <form id="backup-form"
+                                          method="post"
+                                          action="{{ route('generar-backup') }}">
+                                        @csrf
+                                    </form>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

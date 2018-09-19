@@ -12,4 +12,8 @@ class Documento extends Model
         'nombre',
         'url',
     ];
+    protected $hidden = ['created_at', 'updated_at'];
+    public function tipoDocumento() {
+        return $this->belongsTo(TipoDocumento::class);
+    }
 }

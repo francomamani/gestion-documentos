@@ -2,3 +2,9 @@
     color: darkred;
     font-weight: bolder;
 }
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
